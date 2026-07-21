@@ -1,8 +1,22 @@
-const qs=(s,p=document)=>p.querySelector(s),qsa=(s,p=document)=>[...p.querySelectorAll(s)];
-window.addEventListener('load',()=>setTimeout(()=>qs('.loader')?.classList.add('loaded'),350));
-const header=qs('.site-header');window.addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>35),{passive:true});
-const menu=qs('.menu-toggle'),nav=qs('.site-nav');function closeMenu(){menu?.classList.remove('open');nav?.classList.remove('open');document.body.classList.remove('menu-open');menu?.setAttribute('aria-expanded','false')}menu?.addEventListener('click',()=>{const open=menu.classList.toggle('open');nav?.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);menu.setAttribute('aria-expanded',String(open))});qsa('.site-nav a').forEach(a=>a.addEventListener('click',closeMenu));
-const observer=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.12});qsa('.reveal').forEach(el=>observer.observe(el));
-const glow=qs('.cursor-glow');window.addEventListener('pointermove',e=>{if(glow){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'}},{passive:true});
-const range=qs('.light-control'),mask=qs('.night-mask');range?.addEventListener('input',()=>mask?.style.setProperty('--light-x',range.value+'%'));
-window.addEventListener('scroll',()=>{const hero=qs('.hero-media'),community=qs('.community-media');if(hero)hero.style.translate=`0 ${Math.min(scrollY*.06,55)}px`;if(community){const r=community.parentElement.getBoundingClientRect();community.style.translate=`0 ${r.top*-.025}px`}}, {passive:true});
+const loader=document.querySelector('.loader');
+window.addEventListener('load',()=>setTimeout(()=>loader?.classList.add('hidden'),450));
+
+const header=document.querySelector('.site-header');
+const menuButton=document.querySelector('.menu-button');
+const mobileNav=document.querySelector('.mobile-nav');
+const closeMenu=()=>{menuButton?.classList.remove('open');mobileNav?.classList.remove('open');document.body.classList.remove('menu-open');menuButton?.setAttribute('aria-expanded','false')};
+menuButton?.addEventListener('click',()=>{const open=menuButton.classList.toggle('open');mobileNav.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);menuButton.setAttribute('aria-expanded',String(open))});
+document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',closeMenu));
+
+const updateHeader=()=>header?.classList.toggle('scrolled',window.scrollY>40);
+updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
+
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const productImage=document.querySelector('.product-image');
+const lightSwitch=document.querySelector('.light-switch');
+lightSwitch?.addEventListener('click',()=>{const active=productImage.classList.toggle('reflective');lightSwitch.setAttribute('aria-pressed',String(active));lightSwitch.querySelector('b').textContent=active?'Reflection active':'Activate reflection'});
+
+const heroImage=document.querySelector('.hero-media>img');
+window.addEventListener('scroll',()=>{if(heroImage && window.scrollY<innerHeight*1.2){heroImage.style.transform=`scale(1.12) translateY(${window.scrollY*.025}px)`}},{passive:true});
