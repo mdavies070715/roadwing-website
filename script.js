@@ -1,22 +1,12 @@
-const loader=document.querySelector('.loader');
-window.addEventListener('load',()=>setTimeout(()=>loader?.classList.add('hidden'),450));
-
-const header=document.querySelector('.site-header');
-const menuButton=document.querySelector('.menu-button');
-const mobileNav=document.querySelector('.mobile-nav');
-const closeMenu=()=>{menuButton?.classList.remove('open');mobileNav?.classList.remove('open');document.body.classList.remove('menu-open');menuButton?.setAttribute('aria-expanded','false')};
-menuButton?.addEventListener('click',()=>{const open=menuButton.classList.toggle('open');mobileNav.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);menuButton.setAttribute('aria-expanded',String(open))});
-document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',closeMenu));
-
-const updateHeader=()=>header?.classList.toggle('scrolled',window.scrollY>40);
-updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
-
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-const productImage=document.querySelector('.product-image');
-const lightSwitch=document.querySelector('.light-switch');
-lightSwitch?.addEventListener('click',()=>{const active=productImage.classList.toggle('reflective');lightSwitch.setAttribute('aria-pressed',String(active));lightSwitch.querySelector('b').textContent=active?'Reflection active':'Activate reflection'});
-
-const heroImage=document.querySelector('.hero-media>img');
-window.addEventListener('scroll',()=>{if(heroImage && window.scrollY<innerHeight*1.2){heroImage.style.transform=`scale(1.12) translateY(${window.scrollY*.025}px)`}},{passive:true});
+const header=document.querySelector('[data-header]');
+const menu=document.querySelector('.menu-button');
+const nav=document.querySelector('.main-nav');
+const setHeader=()=>header?.classList.toggle('scrolled',scrollY>24);
+setHeader();addEventListener('scroll',setHeader,{passive:true});
+menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':''});
+nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+const io=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const night=document.querySelector('#night-panel');
+night?.addEventListener('pointermove',e=>{const r=night.getBoundingClientRect();night.style.setProperty('--mx',`${((e.clientX-r.left)/r.width)*100}%`);night.style.setProperty('--my',`${((e.clientY-r.top)/r.height)*100}%`)});
+if(matchMedia('(pointer:fine)').matches){document.querySelectorAll('[data-tilt]').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(1100px) rotateX(${y*-2.2}deg) rotateY(${x*2.8}deg)`});card.addEventListener('pointerleave',()=>card.style.transform='')})}

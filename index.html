@@ -3,155 +3,140 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="RoadWing premium motorcycle lifestyle apparel. Understated by day. Reflective by night. Respect the Road.">
+  <meta name="description" content="RoadWing premium motorcycle lifestyle apparel. Understated by day. Reflective by night.">
   <meta name="theme-color" content="#050505">
   <title>RoadWing | Respect The Road</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="loader" aria-hidden="true">
-    <div class="loader-mark"><img src="assets/logo-silver.webp" alt=""></div>
-    <div class="loader-line"><span></span></div>
-  </div>
-
-  <header class="site-header" id="top">
+  <div class="page-noise" aria-hidden="true"></div>
+  <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="RoadWing home">
-      <img src="assets/logo-silver.webp" alt="RoadWing">
+      <img src="assets/logo.png" alt="RoadWing — Respect The Road">
     </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><b class="sr-only">Open menu</b></button>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
       <a href="#collection">Collection</a>
       <a href="#identity">Identity</a>
       <a href="#community">Community</a>
-      <a href="#story">Our story</a>
+      <a href="#story">Our Story</a>
+      <a class="nav-cta" href="#join">Join</a>
     </nav>
-    <div class="header-actions">
-      <a class="header-link" href="#contact">Join</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span><b class="sr-only">Menu</b></button>
-    </div>
   </header>
 
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <a href="#collection">Collection</a><a href="#identity">Identity</a><a href="#community">Community</a><a href="#story">Our story</a><a href="#contact">Join RoadWing</a>
-  </nav>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/hero-mountains.webp" alt="">
-        <div class="hero-vignette"></div>
-        <div class="fog fog-a"></div><div class="fog fog-b"></div>
-      </div>
-      <div class="hero-content">
-        <p class="kicker reveal">Premium motorcycle lifestyle apparel</p>
-        <div class="hero-logo reveal"><img src="assets/logo-silver.webp" alt="RoadWing — Respect The Road"></div>
-        <h1 id="hero-title" class="sr-only">RoadWing — Respect The Road</h1>
-        <p class="hero-statement reveal">A premium identity for riders.<br><strong>Reflective by night.</strong></p>
-        <div class="hero-actions reveal">
-          <a class="button button-light" href="#collection">Discover the first drop</a>
-          <a class="button button-ghost" href="#identity">Explore the identity</a>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-road" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="kicker">Premium motorcycle lifestyle apparel</p>
+        <h1>Made for the road.<br><span>Worn everywhere.</span></h1>
+        <p class="lede">RoadWing combines heavyweight construction, premium embroidery and reflective detailing in clothing built for riders—not costumes.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#collection">Discover the first release</a>
+          <a class="button button-ghost" href="#identity">See the identity</a>
         </div>
       </div>
-      <div class="hero-sidecopy">Born in Wales · Worn everywhere</div>
-      <a class="scroll-cue" href="#collection"><span>Scroll to discover</span><i></i></a>
-    </section>
-
-    <section class="marquee" aria-label="RoadWing values">
-      <div class="marquee-track"><span>RESPECT THE ROAD</span><i>◆</i><span>PREMIUM BY DESIGN</span><i>◆</i><span>REFLECTIVE BY NIGHT</span><i>◆</i><span>BUILT FOR RIDERS</span><i>◆</i><span>RESPECT THE ROAD</span><i>◆</i><span>PREMIUM BY DESIGN</span></div>
-    </section>
-
-    <section class="collection" id="collection">
-      <div class="section-intro reveal">
-        <p class="eyebrow">The first release</p>
-        <h2>One hoodie.<br><span>One unmistakable identity.</span></h2>
+      <div class="hero-product reveal" data-tilt>
+        <div class="product-halo" aria-hidden="true"></div>
+        <img src="assets/hoodie.png" alt="RoadWing black signature hoodie, front and back">
       </div>
-      <div class="product-stage">
-        <div class="product-image reveal">
-          <div class="product-glow"></div>
-          <img src="assets/hoodie.webp" alt="RoadWing black signature hoodie, front and back">
-          <button class="light-switch" type="button" aria-pressed="false"><span class="switch-dot"></span><b>Activate reflection</b></button>
-        </div>
-        <div class="product-copy reveal">
-          <p class="eyebrow">Signature Hoodie — Black</p>
-          <h3>Minimal from the front.<br>Impossible to ignore from behind.</h3>
-          <p class="lead">A heavyweight black hoodie with a small embroidered RW chest emblem and a large silver, three-dimensional reflective wing identity across the back.</p>
-          <div class="spec-grid">
-            <div><strong>500 GSM</strong><span>Heavyweight structure</span></div>
-            <div><strong>3D embroidery</strong><span>ROADWING lettering</span></div>
-            <div><strong>Reflective wings</strong><span>Direct-light response</span></div>
-            <div><strong>Limited drop</strong><span>First release</span></div>
-          </div>
-          <a class="button button-outline" href="#contact">Register for first access</a>
-        </div>
-      </div>
+      <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
     </section>
 
-    <section class="identity" id="identity">
-      <div class="identity-copy reveal">
+    <section class="statement" id="identity">
+      <div class="statement-inner reveal">
         <p class="eyebrow">The RoadWing identity</p>
-        <h2>Silver by design.<br><span>Alive in the light.</span></h2>
-        <p>The wings are the signature. The RW is the core. The road runs through the centre. Every part of the mark has purpose—and every finish is engineered to work on fabric, on the road and after dark.</p>
-      </div>
-      <div class="identity-mark reveal" aria-label="RoadWing logo detail">
-        <img src="assets/logo-silver.webp" alt="RoadWing silver logo">
-        <div class="reflection-sweep"></div>
-      </div>
-      <div class="identity-cards">
-        <article class="reveal"><span>01</span><h3>Reflective wings</h3><p>A clean metallic look in daylight that reacts sharply when direct light hits.</p></article>
-        <article class="reveal"><span>02</span><h3>Embroidered wordmark</h3><p>Raised silver stitching gives ROADWING and RESPECT THE ROAD a premium tactile finish.</p></article>
-        <article class="reveal"><span>03</span><h3>Built to reproduce</h3><p>Designed to remain strong across hoodies, jackets, tees, decals and future riding gear.</p></article>
+        <h2>Understated by day.<br><span class="reflective-text">Reflective by night.</span></h2>
+        <p>One clean silhouette. A small embroidered chest mark. A full rear identity that reacts when direct light hits it.</p>
       </div>
     </section>
 
-    <section class="community" id="community">
-      <div class="community-media"><img src="assets/community-hq.webp" alt="RoadWing riders gathered at a motorcycle meet"><div class="community-overlay"></div><img class="community-logo-lockup" src="assets/logo-silver-transparent.png" alt=""></div>
-      <div class="community-content reveal">
+    <section class="collection section" id="collection">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">First release</p><h2>Signature Hoodie</h2></div>
+        <p>Designed as a premium everyday hoodie first, with rider-led details worked into every surface.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-image-card reveal" data-tilt>
+          <img src="assets/hoodie.png" alt="RoadWing Signature Hoodie">
+          <span class="image-note">Front + back presentation</span>
+        </article>
+        <article class="product-info reveal">
+          <p class="status">Limited launch · Registering interest</p>
+          <h3>Black / Silver Reflective</h3>
+          <p class="product-copy">Heavyweight black fleece with a restrained embroidered front and a full silver 3D reflective RoadWing identity across the back.</p>
+          <div class="spec-grid">
+            <div><strong>500 GSM</strong><span>Heavyweight fabric</span></div>
+            <div><strong>Embroidered</strong><span>Chest and wordmark</span></div>
+            <div><strong>Reflective</strong><span>Rear wing identity</span></div>
+            <div><strong>Limited</strong><span>First production run</span></div>
+          </div>
+          <a class="button button-light" href="#join">Register interest</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="day-night" aria-label="Day and night design demonstration">
+      <div class="day-panel reveal">
+        <p class="eyebrow">Day</p>
+        <h2>Clean. Dark. Deliberate.</h2>
+        <p>Premium black fabric and tonal detailing keep the garment refined away from the bike.</p>
+      </div>
+      <div class="night-panel reveal" id="night-panel">
+        <div class="night-logo"><img src="assets/logo.png" alt=""></div>
+        <div class="night-copy"><p class="eyebrow">Night</p><h2>Light reveals the identity.</h2><p>Move your pointer across the panel to simulate direct light hitting the reflective surface.</p></div>
+      </div>
+    </section>
+
+    <section class="community section" id="community">
+      <div class="community-copy reveal">
         <p class="eyebrow">More than clothing</p>
-        <h2>Built for riders.<br><span>Backed by community.</span></h2>
-        <p>RoadWing is for the early starts, late finishes, motorway miles, mountain roads, coffee stops and bike meets in between. Men and women. New riders and lifelong riders. One identity, one standard: Respect the Road.</p>
-        <a class="button button-light" href="#contact">Join the movement</a>
+        <h2>Built for riders.<br>Backed by community.</h2>
+        <p>Early starts, late finishes, motorway miles, mountain roads, coffee stops and bike meets. Men and women. New riders and lifelong riders. One identity, one standard: Respect the Road.</p>
+        <a class="text-link" href="#join">Join the movement <span>→</span></a>
       </div>
-      <div class="community-badge reveal"><strong>WALES</strong><span>Where RoadWing began</span></div>
+      <div class="community-cards reveal">
+        <article><span>01</span><h3>Ride</h3><p>Created around the real culture of motorcycling.</p></article>
+        <article><span>02</span><h3>Wear</h3><p>Premium enough for every day, distinctive enough to be remembered.</p></article>
+        <article><span>03</span><h3>Belong</h3><p>A growing identity for riders who share the same respect.</p></article>
+      </div>
     </section>
 
-    <section class="story" id="story">
+    <section class="story section" id="story">
+      <div class="story-image reveal"><img src="assets/mountain-bike.png" alt="Kawasaki Z900 on a Welsh mountain road"></div>
       <div class="story-copy reveal">
-        <p class="eyebrow">Born from the lifestyle</p>
-        <h2>Not created in a boardroom.</h2>
-        <p>RoadWing started on Welsh roads with one clear belief: motorcycle clothing should feel premium, look refined and carry a real identity—even when you are nowhere near the bike.</p>
-        <p>It is clothing made for riders who care about the road, the culture around it and the people they share it with.</p>
+        <p class="eyebrow">Born in Wales</p>
+        <h2>The road started the story.</h2>
+        <p>RoadWing began on Welsh roads with one belief: motorcycle clothing should feel premium, look refined and carry a genuine identity even when you are nowhere near the bike.</p>
+        <p>The machine is part of the origin—not the whole brand. RoadWing is about every rider who lives the lifestyle and respects the people they share the road with.</p>
       </div>
-      <div class="story-image reveal"><img src="assets/story-snow-bike.webp" alt="RoadWing origin motorcycle against dramatic snow mountains"><span>THE MACHINE THAT STARTED THE STORY</span></div>
     </section>
 
     <section class="manifesto">
-      <p class="manifesto-line reveal">LIVE IT.</p>
-      <p class="manifesto-line reveal">WEAR IT.</p>
-      <p class="manifesto-line reveal silver">RESPECT IT.</p>
+      <div class="manifesto-bg" aria-hidden="true"></div>
+      <div class="manifesto-content reveal">
+        <p>RoadWing</p>
+        <h2>Live it.<br>Wear it.<br><span>Respect it.</span></h2>
+      </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="contact-inner reveal">
-        <p class="eyebrow">First release</p>
-        <h2>Be first in line.</h2>
-        <p>Join the RoadWing list for launch access, rider stories and future ride-out announcements.</p>
-        <form class="signup-form" action="mailto:hello@roadwing.co.uk" method="post" enctype="text/plain">
-          <label class="sr-only" for="email">Email address</label>
-          <input id="email" name="email" type="email" placeholder="YOUR EMAIL ADDRESS" required>
-          <button type="submit">Join RoadWing</button>
-        </form>
-        <small>No spam. Only RoadWing drops and important updates.</small>
+    <section class="join section" id="join">
+      <div class="join-card reveal">
+        <div><p class="eyebrow">First access</p><h2>Be there from the beginning.</h2><p>Register your interest in the first RoadWing release and receive launch updates.</p></div>
+        <a class="button button-light" href="mailto:hello@roadwing.co.uk?subject=RoadWing%20First%20Release">Contact RoadWing</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-brand"><img src="assets/logo-silver.webp" alt="RoadWing"><p>Respect The Road.</p></div>
-    <div class="footer-links"><a href="#collection">Collection</a><a href="#identity">Identity</a><a href="#community">Community</a><a href="#story">Our story</a></div>
-    <p class="copyright">© 2026 RoadWing. All rights reserved.</p>
+  <footer class="footer">
+    <img src="assets/logo.png" alt="RoadWing">
+    <p>© 2026 RoadWing. Respect The Road.</p>
+    <div><a href="#collection">Collection</a><a href="#story">Story</a><a href="mailto:hello@roadwing.co.uk">Contact</a></div>
   </footer>
 </body>
 </html>
