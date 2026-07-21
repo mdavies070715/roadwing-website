@@ -15,3 +15,62 @@
 .manifesto-bg{inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.68) 34%,rgba(0,0,0,.18) 72%),url('assets/manifesto-bike-cinematic.webp') 68% 50%/cover no-repeat;filter:none;transform:none}
 .manifesto{min-height:88vh}
 @media(max-width:760px){.identity-visual{min-height:500px}.identity-logo-base,.identity-logo-reveal{width:84%;top:43%}.identity-caption{left:24px;bottom:24px;right:24px}.identity-cursor{width:220px;height:220px}.identity-logo-reveal{-webkit-mask-image:radial-gradient(circle 110px at var(--mx,50%) var(--my,43%),#000 0 44%,rgba(0,0,0,.8) 62%,transparent 100%);mask-image:radial-gradient(circle 110px at var(--mx,50%) var(--my,43%),#000 0 44%,rgba(0,0,0,.8) 62%,transparent 100%)}.manifesto-bg{background-position:72% center}}
+
+/* v4 — premium typography, sharper colour and clean cinematic manifesto */
+:root{
+  --white:#ffffff;
+  --silver:#e2e5ea;
+  --grey:#b4b8c0;
+  --muted:#7f848d;
+  --green:#59e36b;
+  --line:rgba(255,255,255,.14);
+}
+body{font-family:Manrope,Arial,sans-serif;background:#030304;color:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.page-noise{opacity:.012}
+h1,h2,h3,.identity-caption strong,.community-cards h3,.manifesto h2{font-family:Oswald,Arial,sans-serif;font-weight:600;letter-spacing:-.025em}
+.eyebrow,.kicker,.status,.image-note,.main-nav,.button,.text-link{font-weight:800;letter-spacing:.16em}
+.site-header.scrolled{background:rgba(3,3,4,.94);box-shadow:0 12px 45px rgba(0,0,0,.34)}
+.brand img,.footer img{filter:grayscale(1) brightness(1.3) contrast(1.2) drop-shadow(0 0 15px rgba(255,255,255,.08))}
+.hero h1,.statement h2,.section-head h2,.identity-copy h2,.community-copy h2,.story-copy h2{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero h1 span,.reflective-text,.identity-copy h2 span{background:linear-gradient(108deg,#747981 0%,#f7f8fa 42%,#8d929b 68%,#ffffff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.button-light{background:#fff;color:#050506;border-color:#fff;box-shadow:0 10px 34px rgba(255,255,255,.08)}
+.button-light:hover{box-shadow:0 14px 42px rgba(255,255,255,.16)}
+.button-ghost,.nav-cta{border-color:rgba(255,255,255,.38)}
+.product-image-card,.product-info,.identity-visual,.story-image,.join-card{border-color:rgba(255,255,255,.16)}
+.product-image-card img,.hero-product img{filter:contrast(1.08) saturate(1.04) drop-shadow(0 30px 52px rgba(0,0,0,.65))}
+.spec-grid strong{color:#fff}.spec-grid div{background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012))}
+.identity-visual{background:#07080a;box-shadow:0 46px 110px rgba(0,0,0,.68),inset 0 0 90px rgba(255,255,255,.018)}
+.identity-fabric{background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.075),transparent 40%),repeating-linear-gradient(122deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),linear-gradient(145deg,#14171c,#050506 72%)}
+.identity-logo-base{opacity:.42;filter:grayscale(1) brightness(.9) contrast(1.3)}
+.identity-logo-reveal{filter:grayscale(1) brightness(2.15) contrast(1.18) drop-shadow(0 0 18px rgba(255,255,255,.42)) drop-shadow(0 0 58px rgba(190,205,230,.25))}
+.identity-cursor{background:radial-gradient(circle,rgba(255,255,255,.25),rgba(186,203,230,.095) 38%,transparent 72%)}
+.community-cards article:hover{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012));transform:translateY(-3px);transition:.25s}
+.story-image img{filter:contrast(1.14) saturate(1.05) brightness(.94)}
+.story-image:after{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.24)),linear-gradient(90deg,transparent 58%,rgba(0,0,0,.22))}
+
+/* Clean cinematic final panel: scenic Welsh mountain image only — no yard, tools or rubbish */
+.manifesto{min-height:88vh;background:#050506}
+.manifesto-bg{
+  inset:0;
+  background:
+    radial-gradient(circle at 74% 45%,rgba(74,255,95,.10),transparent 24%),
+    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.78) 34%,rgba(0,0,0,.30) 66%,rgba(0,0,0,.16) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42)),
+    url('assets/story-cinematic.webp') 65% 52%/cover no-repeat;
+  filter:contrast(1.17) saturate(1.08) brightness(.92);
+  transform:scale(1.025);
+}
+.manifesto-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.45),transparent 55%),radial-gradient(circle at 72% 52%,transparent 0 28%,rgba(0,0,0,.28) 68%,rgba(0,0,0,.58) 100%)}
+.manifesto-content{max-width:1420px}
+.manifesto-content>p{color:#d6d9df;font-weight:800}
+.manifesto h2{color:#fff;text-shadow:0 5px 30px rgba(0,0,0,.58)}
+.manifesto h2 span{background:linear-gradient(100deg,#80858e,#f7f8fa 50%,#90959e);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* sharper green accents without turning the site into Kawasaki branding */
+.text-link span,.scroll-cue i{color:var(--green)}
+.status{color:#d9dde3}
+
+@media(max-width:760px){
+  .manifesto-bg{background-position:68% center;transform:scale(1.04)}
+  .manifesto h2{font-size:clamp(4.4rem,19vw,7rem)}
+}
